@@ -1,0 +1,14 @@
+[
+{
+  "Id": "1",
+  "Name": "rossi",
+  "E-mail": "rossi@azienda.it",
+  "Device Id": "cippa lippa"
+},
+{
+"Id": "2",
+"Name": "bianchi",
+"E-mail": "bianchi@azienda.it",
+"Device Id": "lappa lippa"
+}
+]

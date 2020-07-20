@@ -1,0 +1,7 @@
+runtime: php72
+entrypoint: serve --worker=2 --enable-dynamic-workers src/fe-controller.php
+
+handlers:
+- url: /(.*\.(gif|png|jpg|css|js))$
+  static_files: src/\1
+  upload: src/.*\.(gif|png|jpg|css|js))$
