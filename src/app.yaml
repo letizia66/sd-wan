@@ -3,5 +3,5 @@ entrypoint: serve --workers=2 --enable-dynamic-workers fe-controller.php
 
 handlers:
 - url: /(.*\.(gif|png|jpg|css|js))$
-  static_files: src/\1
-  upload: src/(.*\.(gif|png|jpg|css|js))$
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|css|js))$
