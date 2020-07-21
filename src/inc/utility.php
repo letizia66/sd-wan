@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
+# Imports the Google Cloud client library
+use Google\Cloud\Datastore\DatastoreClient;
 
 function clean_input($data) {
   $data = trim($data);
