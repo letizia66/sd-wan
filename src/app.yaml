@@ -1,5 +1,5 @@
 runtime: php72
-entrypoint: serve --worker=2 --enable-dynamic-workers fe-controller.php
+entrypoint: serve --workers=2 --enable-dynamic-workers fe-controller.php
 
 handlers:
 - url: /(.*\.(gif|png|jpg|css|js))$
