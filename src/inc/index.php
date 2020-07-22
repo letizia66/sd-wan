@@ -2,7 +2,7 @@
   <head>
     <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="/asset/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/asset/Buttons-1.6.2/css/buttons.datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/asset/Buttons-1.6.2/css/buttons.dataTables.min.css"/>
     <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="/asset/datatables.min.js"></script>
     <script type="text/javascript" src="/asset/Buttons-1.6.2/js/dataTables.buttons.min.js"></script>

@@ -14,7 +14,7 @@ require "inc/utility.php";
       }
     }
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      sendResponse(200,"User created!", create_user($_POST['uname'],$_POST['psw'],$POST['email'],$POST['policyid']));
+      sendResponse(200,"User created!", create_user($_POST['uname'],$_POST['psw'],$_POST['email'],$_POST['policyid']));
     }
   }
 ?>
