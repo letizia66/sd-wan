@@ -16,7 +16,7 @@ function get_user_id($name) {
 }
 
 function isAuthenticated($name, $password) {
-  $user_exist = datastore.isKey('users', $name);
+  $user_exist = $datastore.isKey('users', $name);
   if ($user_exist) {
       return true; // TODO db access
   } else {
