@@ -1,5 +1,5 @@
 {
   "require": {
-          "google/cloud-datastore": "v0.135.0"
+          "google/cloud-datastore": "v1.11.6"
       }
 }
