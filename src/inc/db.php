@@ -16,6 +16,7 @@ function get_user_id($name) {
 }
 
 function isAuthenticated($name, $password) {
+  global $datastore;
   $key = $datastore.key('users', $name);
   $entity = $datastore->lookup($key);
   if (!is_null($entity)) {
