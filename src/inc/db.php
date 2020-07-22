@@ -19,13 +19,12 @@ function isAuthenticated($name, $password) {
   global $datastore;
 
   $key = $datastore->key('users',$name);
-  print_r($key);
-
   $entity = $datastore->lookup($key);
   if (!is_null($entity)) {
-       return true; // TODO db access
-   } else {
-     return false;
+       if ($entity['password'] == $password) {
+         return true;
+       }
    }
+  return false;
 }
 ?>
