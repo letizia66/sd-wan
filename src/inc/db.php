@@ -40,8 +40,8 @@ function get_users() {
       $data[] = array(
         "Id" => "",
         "Name" => $entity['username'],
-        "E-mail": "",
-        "Policy Id": $entity['policyId']
+        "E-mail" => "",
+        "Policy Id" => $entity['policyId']
       );
     }
 
