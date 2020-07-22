@@ -35,16 +35,16 @@ function get_users() {
             ->order('username');
 
     $result = $datastore->runQuery($query);
-    $data = new array();
+    $data = array();
     foreach ($result as $entity) {
-      $data[] = new array(
+      $data[] = array(
         "Id" => "",
         "Name" => $entity['username'],
         "E-mail": "",
         "Policy Id": $entity['policyId']
       );
     }
-    
+
   //$json = file_get_contents('db/users.json', false);
   //$data = json_decode($json);
   return json_encode($data);
