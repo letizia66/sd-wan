@@ -47,7 +47,7 @@ function get_users() {
 
   //$json = file_get_contents('db/users.json', false);
   //$data = json_decode($json);
-  return json_decode($data);
+  return json_decode(json_encode($data));
 }
 
 ?>
