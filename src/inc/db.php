@@ -32,6 +32,7 @@ function get_users() {
     global $datastore;
     $query = $datastore->query()
             ->kind('users')
+            ->filter('role', '=', 'customer')
             ->order('username');
 
     $result = $datastore->runQuery($query);
@@ -45,9 +46,46 @@ function get_users() {
       );
     }
 
-  //$json = file_get_contents('db/users.json', false);
-  //$data = json_decode($json);
   return json_decode(json_encode($data));
+}
+
+function get_user($name) {
+  global $datastore;
+
+  $key = $datastore->key('users',$name);
+  $entity = $datastore->lookup($key);
+  $data = null;
+  if (!is_null($entity)) {
+      $data = array(
+        "Id" => "",
+        "Name" => $entity['username'],
+        "E-mail" => "",
+        "Policy Id" => $entity['policyId']
+      );
+  }
+  return json_decode(json_encode($data));
+}
+
+function delete_user($name) {
+  return true;
+}
+
+function create_user($name, $password, $email, $policyid) {
+  global $datastore;
+
+  $key = $datastore->key('users',$name);
+  $entity = $datastore->lookup($key);
+  if (is_null($entity)) {
+    $task = $datastore->entity($key, [
+      "password" => $password,
+      "username" => $name,
+      "role" => "customer",
+      "policyid" => $policyid
+    ]);
+    $datastore->upsert($task);
+    return get_user($data);
+  }
+  return null;
 }
 
 ?>
