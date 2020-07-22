@@ -17,12 +17,15 @@ function get_user_id($name) {
 
 function isAuthenticated($name, $password) {
   global $datastore;
-  $key = $datastore.key('users', $name);
-  $entity = $datastore->lookup($key);
-  if (!is_null($entity)) {
-      return true; // TODO db access
-  } else {
-    return false;
-  }
+  print_r($datastore);
+  $key = $datastore.key($name);
+  print_r($key);
+  return true;
+  // $entity = $datastore->lookup($key);
+  // if (!is_null($entity)) {
+  //     return true; // TODO db access
+  // } else {
+  //   return false;
+  // }
 }
 ?>
