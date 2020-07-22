@@ -1,9 +1,5 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
-// Imports the Google Cloud client library
-use Google\Cloud\Datastore\DatastoreClient;
-
-// getenv('REMOTE_ADDR')
+require 'db.php';
 
 function clean_input($data) {
   $data = trim($data);
@@ -16,17 +12,6 @@ function redirect($url, $statusCode = 302)
 {
    header('Location: ' . $url, true, $statusCode);
    die();
-}
-
-function isAuthenticated($name, $password) {
-  if ($name == "admin") {
-      return true; // TODO db access
-  } else {
-    return false;
-  }
-}
-function get_user_id($name) {
-  return 3; // TODO db access
 }
 
 // Controllo se la sessione è presente
