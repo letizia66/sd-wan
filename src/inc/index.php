@@ -17,7 +17,7 @@
          <div class="container">
            <table id="user-list">
              <thead>
-               <tr><th>Id</th><th>Name</th><th>E-mail</th><th>Device Id</th></tr>
+               <tr><th>Id</th><th>Name</th><th>E-mail</th><th>Policy Id</th></tr>
              </thead>
              <tbody>
              </tbody>
@@ -42,11 +42,8 @@
             <label for="email"><b>E-mail address</b></label>
             <input type="text" placeholder="Enter E-mail address" name="email" required><br/>
 
-            <label for="deviceid"><b>Device Id</b></label>
-            <input type="text" placeholder="Enter Device Id" name="deviceid" required><br/>
-
-            <label for="deviceip"><b>Device Ip Address</b></label>
-            <input type="text" placeholder="Enter Device Ip address" name="deviceip" required><br/>
+            <label for="deviceid"><b>Policy Id</b></label>
+            <input type="text" placeholder="Enter Policy Id" name="policyid" required><br/>
 
             <button type="submit">Create</button>
 

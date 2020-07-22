@@ -45,9 +45,4 @@ function sendResponse($resp_code, $message, $data){
   echo json_encode(array('code'=>$resp_code,'message'=>$message,'data'=>$data));
 }
 
-function get_users() { // TODO db
-  $json = file_get_contents('db/users.json', false);
-  $data = json_decode($json);
-  return $data;
-}
 ?>

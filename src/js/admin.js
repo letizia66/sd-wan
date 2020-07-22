@@ -34,7 +34,7 @@ $(document).ready(function() {
             { "data": "Id" },
             { "data": "Name" },
             { "data": "E-mail" },
-            { "data": "Device Id" }
+            { "data": "Policy Id" }
         ],
       select: true,
       buttons: [

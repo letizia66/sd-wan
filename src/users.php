@@ -10,7 +10,7 @@ require "inc/utility.php";
       sendResponse(200,"User deleted!", null);
     }
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      sendResponse(200,"User created!", '{"Id": "3","Name": "verdi","E-mail": "verdi@azienda.it","Device Id": "ciao lippa"}');
+      sendResponse(200,"User created!", '{"Id": "3","Name": "verdi","E-mail": "verdi@azienda.it","Policy Id": "ciao lippa"}');
     }
   }
 ?>
