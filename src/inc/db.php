@@ -91,7 +91,7 @@ function create_user($name, $password, $email, $policyid) {
       "email" => $email
     ]);
     $datastore->upsert($data);
-    return get_user($data);
+    return get_user($name);
   }
   return null;
 }
