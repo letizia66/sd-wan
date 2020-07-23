@@ -68,7 +68,15 @@ function get_user($name) {
 }
 
 function delete_user($name) {
-  return true;
+  global $datastore;
+
+  $key = $datastore->key('users',$name);
+  $entity = $datastore->lookup($key);
+  if (!is_null($entity)) {
+    $datastore->delete($key);
+    return true;
+  }
+  return false;
 }
 
 function create_user($name, $password, $email, $policyid) {
@@ -77,13 +85,13 @@ function create_user($name, $password, $email, $policyid) {
   $key = $datastore->key('users',$name);
   $entity = $datastore->lookup($key);
   if (is_null($entity)) {
-    $task = $datastore->entity($key, [
+    $data = $datastore->entity($key, [
       "password" => $password,
       "username" => $name,
       "role" => "customer",
       "policyId" => $policyid
     ]);
-    $datastore->upsert($task);
+    $datastore->upsert($data);
     return get_user($data);
   }
   return null;
