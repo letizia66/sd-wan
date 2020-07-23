@@ -45,4 +45,17 @@ function sendResponse($resp_code, $message, $data = null){
   echo json_encode(array('code'=>$resp_code,'message'=>$message,'data'=>$data));
 }
 
+
+function create_firewall_rule($id, $action, $sip, $sport, $dip, $dport) {
+    return json_encode(array('Id' => '1',
+        'Action' => 'Allow',
+        'Source Ip' => 'Any',
+        'Source Port' => 'Any',
+        'Destinatio Ip' => '10.0.0.2',
+        'Destination Port' => '443'));
+}
+
+function delete_firewall_rule($id) {
+  return true;
+}
 ?>

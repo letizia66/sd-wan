@@ -55,9 +55,6 @@ $(document).ready(function() {
                 text: 'Create',
                 action: function(e,dt,node,config) {
                   $('#create-user').show();
-                  //table.row.create( {
-                //    title: 'Create new row'
-                //  } );
                 }
             }
         ]

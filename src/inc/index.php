@@ -6,48 +6,31 @@
     <script type="text/javascript" src="/js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="/asset/datatables.min.js"></script>
     <script type="text/javascript" src="/asset/Buttons-1.6.2/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="/js/admin.js"></script>
+    <?php if (is_admin()) { ?>
+          <script type="text/javascript" src="/js/admin.js"></script>
+    <?php } else { ?>
+          <script type="text/javascript" src="/js/customer.js"></script>
+    <?php } ?>
   </head>
   <body>
     <div class="bgimg">
       <div class="topleft">
         <img src="images/logo.png" style="width: 150px">
       </div>
-      <div class="middle">
-         <div class="container">
-           <table id="user-list">
-             <thead>
-               <tr><th>Name</th><th>E-mail</th><th>Policy Id</th></tr>
-             </thead>
-             <tbody>
-             </tbody>
-           </table>
-         </div>
-      </div>
+        <?php
+        if (is_admin()) {
+          include "admin.php";
+        } else {
+          include "customer.php";
+        }
+        ?>
       <div class="bottomleft">
         <p>Welcome <?php echo $_SESSION['name']; ?></p>
       </div>
-    </div>
-    <div class="modal-dialog" id="create-user">
-
-        <form action="users.php" method="POST">
-          <div class="container">
-            <span class="close">&times;</span>
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required><br/>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required><br/>
-
-            <label for="email"><b>E-mail address</b></label>
-            <input type="text" placeholder="Enter E-mail address" name="email" required><br/>
-
-            <label for="deviceid"><b>Policy Id</b></label>
-            <input type="text" placeholder="Enter Policy Id" name="policyid" required><br/>
-
-            <button type="submit">Create</button>
-
-          </div>
+      <div class="bottomright">
+        <form action="logout.php" method="POST">
+          <button type="submit">Logout</button>
         </form>
+      </div>
     </div>
 </html>

@@ -38,6 +38,14 @@ body, html {
  font-size: 25px;
 }
 
+/* Position text in the bottom-right corner */
+.bottomright {
+ position: absolute;
+ bottom: 0;
+ right: 16px;
+ /* Set the font-size to 25 pixels */
+ font-size: 25px;
+}
 /* Position text in the middle */
 .middle {
  position: absolute;
@@ -54,8 +62,11 @@ hr {
 }
 
 /* ----------------------- FORM ------------------ */
-/* Bordered form */
 form {
+  margin: 0;
+}
+/* Bordered form */
+form.boxed {
   border: 3px solid #f1f1f1;
   padding: 2em 1em;
   /* Set the font-size to 25 pixels */

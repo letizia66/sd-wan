@@ -8,7 +8,7 @@
         <img src="images/logo.png" style="width: 150px">
       </div>
       <div class="middle">
-        <form action="/authenticate.php" method="post">
+        <form class="boxed" action="/authenticate.php" method="post">
          <div class="container">
            <label for="uname"><b>Username</b></label>
            <input type="text" placeholder="Enter Username" name="uname" required><br/>

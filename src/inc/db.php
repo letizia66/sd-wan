@@ -96,4 +96,14 @@ function create_user($name, $password, $email, $policyid) {
   return null;
 }
 
+function is_admin() {
+  global $datastore;
+
+  $key = $datastore->key('users',$_SESSION['name']);
+  $entity = $datastore->lookup($key);
+  if (!is_null($entity)) {
+    return ($entity['role'] == 'admin');
+  }  
+  return false;
+}
 ?>
