@@ -43,7 +43,7 @@ $(document).ready(function() {
                 action: function ( e, dt, node, config ) {
                   rows = table.row('.selected').data();
                   $.ajax({
-                    url: '/users.php?name=' + rows.Name,
+                    url: '/users.php?uname=' + rows.Name,
                     type: 'DELETE',
                     context: $('#user-list'),
                     success: function(result) {
