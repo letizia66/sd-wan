@@ -14,7 +14,7 @@ require "inc/utility.php";
       }
     }
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-      sendResponse(200,"User created!", '{"Name": "verdi","E-mail": "verdi@azienda.it","Policy Id": "ciao lippa"}', create_user($_POST['uname'],$_POST['psw'],$_POST['email'],$_POST['policyid']));
+      sendResponse(200,"User created!", create_user($_POST['uname'],$_POST['psw'],$_POST['email'],$_POST['policyid']));
     }
   }
 ?>

@@ -39,10 +39,10 @@ function check_session($print = false) {
 }
 
 // API Response
-function sendResponse($resp_code, $message, $data = null, $data1 = null){
+function sendResponse($resp_code, $message, $data = null){
   header('Access-Control-Allow-Origin: *');
   header('Content-Type: application/json; charset=UTF-8');
-  echo json_encode(array('code'=>$resp_code,'message'=>$message,'data'=>$data,'data1'=>$data1));
+  echo json_encode(array('code'=>$resp_code,'message'=>$message,'data'=>$data));
 }
 
 ?>

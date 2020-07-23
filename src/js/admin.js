@@ -13,7 +13,6 @@ $(document).ready(function() {
 		    	cache: false,
 		    	context: document.getElementById("user-list")  // valore di this nella response
 		  }).done(function(response,status,obj) {
-        alert(response.data+ " -------- " + response.data1);
         $(this).DataTable().row.add(JSON.parse(response.data)).draw();
           form[0].reset();
           form.closest('.modal-dialog').hide();
