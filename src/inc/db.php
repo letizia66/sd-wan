@@ -87,7 +87,7 @@ function create_user($name, $password, $email, $policyid) {
       "password" => $password,
       "username" => $name,
       "role" => "customer",
-      "policyId" => $policyid.
+      "policyId" => $policyid,
       "email" => $email
     ]);
     $datastore->upsert($data);
