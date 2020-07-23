@@ -31,7 +31,6 @@ $(document).ready(function() {
         "type": "GET"
       },
       columns: [
-            { "data": "Id" },
             { "data": "Name" },
             { "data": "E-mail" },
             { "data": "Policy Id" }

@@ -39,9 +39,8 @@ function get_users() {
     foreach ($result as $entity) {
       if ($entity['role'] == 'customer') {
         $data[] = array(
-          "Id" => "",
           "Name" => $entity['username'],
-          "E-mail" => "",
+          "E-mail" => $entity['email'],
           "Policy Id" => $entity['policyId']
         );
       }
@@ -58,9 +57,8 @@ function get_user($name) {
   $data = null;
   if (!is_null($entity)) {
       $data = array(
-        "Id" => "",
         "Name" => $entity['username'],
-        "E-mail" => "",
+        "E-mail" => $entity['email'],
         "Policy Id" => $entity['policyId']
       );
   }
@@ -89,7 +87,8 @@ function create_user($name, $password, $email, $policyid) {
       "password" => $password,
       "username" => $name,
       "role" => "customer",
-      "policyId" => $policyid
+      "policyId" => $policyid.
+      "email" => $email
     ]);
     $datastore->upsert($data);
     return get_user($data);

@@ -17,7 +17,7 @@
          <div class="container">
            <table id="user-list">
              <thead>
-               <tr><th>Id</th><th>Name</th><th>E-mail</th><th>Policy Id</th></tr>
+               <tr><th>Name</th><th>E-mail</th><th>Policy Id</th></tr>
              </thead>
              <tbody>
              </tbody>
