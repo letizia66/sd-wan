@@ -32,18 +32,19 @@ function get_users() {
     global $datastore;
     $query = $datastore->query()
             ->kind('users')
-            ->filter('role', '=', 'customer')
             ->order('username');
 
     $result = $datastore->runQuery($query);
     $data = array();
     foreach ($result as $entity) {
-      $data[] = array(
-        "Id" => "",
-        "Name" => $entity['username'],
-        "E-mail" => "",
-        "Policy Id" => $entity['policyId']
-      );
+      if ($entity['role'] == 'customer') {
+        $data[] = array(
+          "Id" => "",
+          "Name" => $entity['username'],
+          "E-mail" => "",
+          "Policy Id" => $entity['policyId']
+        );
+      }
     }
 
   return json_decode(json_encode($data));
@@ -80,7 +81,7 @@ function create_user($name, $password, $email, $policyid) {
       "password" => $password,
       "username" => $name,
       "role" => "customer",
-      "policyid" => $policyid
+      "policyId" => $policyid
     ]);
     $datastore->upsert($task);
     return get_user($data);
