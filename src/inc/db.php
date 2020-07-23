@@ -62,7 +62,7 @@ function get_user($name) {
         "Policy Id" => $entity['policyId']
       );
   }
-  return json_decode(json_encode($data));
+  return json_encode($data);
 }
 
 function delete_user($name) {
